@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="523bb219-ad06-4c81-9f19-3adbe8839b8f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jixtxPbH0DGpnm6vIOIJRIa8Mc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/LinkedLists" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/LinkedLists" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.singleLinkedList.js">
+    <configuration name="singleLinkedList-push.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/LinkedLists/singleLinkedList-push.js" working-dir="$PROJECT_DIR$/LinkedLists">
+      <method v="2" />
+    </configuration>
+    <configuration name="singleLinkedList.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/LinkedLists/singleLinkedList.js" working-dir="$PROJECT_DIR$/LinkedLists">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.singleLinkedList.js" />
+        <item itemvalue="Node.js.singleLinkedList-push.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="523bb219-ad06-4c81-9f19-3adbe8839b8f" name="Default Changelist" comment="" />
+      <created>1604300931845</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604300931845</updated>
+      <workItem from="1604300932912" duration="2240000" />
+      <workItem from="1604303534772" duration="604000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom" timestamp="1604302650463">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650463" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center" timestamp="1604302650462">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650462" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left" timestamp="1604302650462">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650462" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right" timestamp="1604302650463">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650463" />
+    <state width="1878" height="326" key="GridCell.Tab.1.bottom" timestamp="1604302650526">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.1.bottom/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650526" />
+    <state width="1878" height="326" key="GridCell.Tab.1.center" timestamp="1604302650525">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.1.center/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650525" />
+    <state width="1878" height="326" key="GridCell.Tab.1.left" timestamp="1604302650525">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.1.left/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650525" />
+    <state width="1878" height="326" key="GridCell.Tab.1.right" timestamp="1604302650525">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.1.right/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650525" />
+    <state width="1878" height="326" key="GridCell.Tab.2.bottom" timestamp="1604302650371">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.2.bottom/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650371" />
+    <state width="1878" height="326" key="GridCell.Tab.2.center" timestamp="1604302650370">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.2.center/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650370" />
+    <state width="1878" height="326" key="GridCell.Tab.2.left" timestamp="1604302650370">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.2.left/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650370" />
+    <state width="1878" height="326" key="GridCell.Tab.2.right" timestamp="1604302650370">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.2.right/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650370" />
+    <state width="1878" height="326" key="GridCell.Tab.3.bottom" timestamp="1604302650372">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.3.bottom/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650372" />
+    <state width="1878" height="326" key="GridCell.Tab.3.center" timestamp="1604302650371">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.3.center/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650371" />
+    <state width="1878" height="326" key="GridCell.Tab.3.left" timestamp="1604302650371">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.3.left/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650371" />
+    <state width="1878" height="326" key="GridCell.Tab.3.right" timestamp="1604302650372">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="326" key="GridCell.Tab.3.right/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604302650372" />
+    <state x="625" y="238" width="670" height="676" key="search.everywhere.popup" timestamp="1604301889535">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state x="625" y="238" width="670" height="676" key="search.everywhere.popup/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1604301889535" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/LinkedLists/singleLinkedList-push.js</url>
+          <line>31</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/LinkedLists/singleLinkedList.js</url>
+          <line>70</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
