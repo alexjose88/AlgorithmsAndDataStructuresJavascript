@@ -26,7 +26,7 @@ class SingleLinkedList {
 
         this.length++;
 
-        return this;
+        return true;
     }
 
     pop() {
@@ -86,7 +86,7 @@ class SingleLinkedList {
 
         this.length++;
 
-        return this;
+        return true;
     }
 
     get(index) {
@@ -95,7 +95,7 @@ class SingleLinkedList {
         }
 
         let currentNode = this.head;
-        for(let i = 0; i < index; i++) {
+        for (let i = 0; i < index; i++) {
             currentNode = currentNode.next;
         }
 
@@ -104,7 +104,7 @@ class SingleLinkedList {
 
     set(index, newValue) {
         let node = this.get(index);
-        if(node !== null) {
+        if (node !== null) {
             node.value = newValue;
             return true;
         }
@@ -114,19 +114,77 @@ class SingleLinkedList {
 
     insert(index, value) {
 
+        if (index < 0 || index > this.length) {
+            return false;
+        }
+
+        if (index === 0) {
+            return this.unshift(value)
+        }
+
+        if (index === this.length) {
+            return this.push(value);
+        }
+
+        let newNode = new Node(value);
+        let nodeBefore = this.get(index - 1);
+        newNode.next = nodeBefore.next;
+        nodeBefore.next = newNode;
+        this.length++;
+
+        return true;
+    }
+
+    remove(index) {
+        if (index < 0 || index >= this.length) return false;
+        if (index === 0) return this.shift();
+        if (index === this.length - 1) return this.pop();
+
+        let prevNode = this.get(index - 1);
+        let removedNode = prevNode.next;
+        prevNode.next = removedNode.next;
+        this.length--;
+
+        return removedNode;
+    }
+
+    reverse() {
+
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+
+        let next = null;
+        let prev = null;
+
+        for(let i = 0 ; i < this.length; i++) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+
+        return this;
     }
 }
 
 let list = new SingleLinkedList();
 
-list.unshift("hello again");
-list.push("hello");
-list.push("how");
-list.push("are");
-list.push("you");
+list.unshift("1");
+list.push("2");
+
+list.push("3");
+list.push("4");
+list.reverse();
+list.push("5");
+
+
+list.insert(3, "hey");
+list.remove(3);
 
 console.log(list.get(1));
 console.log(list.set(7, "dummy new value"));
+
 
 list.pop();
 list.shift();
