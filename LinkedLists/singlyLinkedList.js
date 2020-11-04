@@ -5,7 +5,7 @@ class Node {
     }
 }
 
-class SingleLinkedList {
+class SinglyLinkedList {
     constructor() {
         this.head = null;
         this.tail = null;
@@ -168,7 +168,7 @@ class SingleLinkedList {
     }
 }
 
-let list = new SingleLinkedList();
+let list = new SinglyLinkedList();
 
 list.unshift("1");
 list.push("2");
