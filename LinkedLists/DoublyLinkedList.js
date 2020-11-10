@@ -1,8 +1,8 @@
 class Node {
     constructor(value) {
-        this.previous = null;
+        this.prev = null;
         this.next = null;
-        this.value = value;
+        this.val = value;
     }
 }
 
@@ -20,7 +20,7 @@ class DoublyLinkedList {
             this.head = this.tail;
         } else {
             this.tail.next = node;
-            node.previous = this.tail;
+            node.prev = this.tail;
             this.tail = node;
         }
 
@@ -32,7 +32,7 @@ class DoublyLinkedList {
     pop() {
 
         if (this.length === 0) {
-            return null;
+            return undefined;
         }
 
         let returnNode = this.tail;
@@ -41,9 +41,9 @@ class DoublyLinkedList {
             this.head = null;
             this.tail = null;
         } else {
-            this.tail = returnNode.previous;
+            this.tail = returnNode.prev;
             this.tail.next = null;
-            returnNode.previous = null;
+            returnNode.prev = null;
         }
 
         this.length--;
@@ -53,7 +53,7 @@ class DoublyLinkedList {
 
     shift() {
         if (this.length === 0) {
-            return null;
+            return undefined;
         }
 
         let returnNode = this.head;
@@ -63,7 +63,7 @@ class DoublyLinkedList {
             this.tail = null;
         } else {
             this.head = returnNode.next;
-            this.head.previous = null;
+            this.head.prev = null;
             returnNode.next = null;
         }
 
@@ -80,7 +80,7 @@ class DoublyLinkedList {
             this.tail = newNode;
         } else {
             newNode.next = this.head;
-            this.head.previous = newNode;
+            this.head.prev = newNode;
             this.head = newNode;
         }
 
@@ -99,43 +99,113 @@ class DoublyLinkedList {
             returnNode = this.head;
 
             for (let i = 0; i !== index; i++) {
-                returnNode = returnNode.next
+                returnNode = returnNode.next;
             }
         } else {
             returnNode = this.tail;
             for (let i = this.length - 1; i !== index; i--) {
-                returnNode = returnNode.previous;
+                returnNode = returnNode.prev;
             }
         }
 
         return returnNode;
     }
+
+    set(index, value) {
+        let node = this.get(index);
+        if (node) {
+            node.val = value;
+            return true;
+        }
+
+        return false;
+    }
+
+    insert(index, value) {
+
+        if (index < 0 || index >= this.length) {
+            return false;
+        }
+
+        if (index === 0) {
+            this.unshift(value);
+            return true;
+        }
+
+        if (index === this.length - 1) {
+            this.push(value);
+        }
+
+        let node = this.get(index - 1);
+        if (!node) {
+            return false;
+        }
+
+        let newNode = new Node(value);
+
+        let nextNode = node.next;
+        nextNode.prev = newNode;
+        node.next = newNode;
+        newNode.prev = node;
+        newNode.next = nextNode;
+        this.length++;
+
+        return true;
+    }
+
+    remove(index) {
+        if (index < 0 || index >= this.length) {
+            return undefined;
+        }
+
+        if (index === 0) {
+            return this.shift();
+        }
+
+        if (index === this.length - 1) {
+            return this.pop();
+        }
+
+        let node = this.get(index);
+        if (!node) {
+            return false;
+        }
+
+        let beforeNode = node.prev;
+        let nextNode = node.next;
+        beforeNode.next = nextNode;
+        nextNode.prev = beforeNode;
+
+        node.next = null;
+        node.prev = null;
+        this.length--;
+
+        return node;
+    }
+
+    reverse() {
+
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+
+        let next = null;
+        let prev = null;
+
+        for(let i = 0 ; i < this.length; i++) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+
+        return this;
+    }
 }
 
-let list = new DoublyLinkedList();
-list.push("1");
-list.push("2");
-list.push("3");
-list.push("4");
-list.push("5");
-list.push("6");
-list.push("7");
-
-console.log(list.get(0));
-console.log(list.get(1));
-console.log(list.get(2));
-console.log(list.get(4));
-console.log(list.get(5));
-console.log(list.get(7));
-
-list.shift();
-list.shift();
-list.shift();
-list.shift();
-list.unshift("4");
-list.unshift("3");
-list.unshift("2");
-list.unshift("1");
-
-
-console.log(list)
+let list = new DoublyLinkedList;
+console.log(list.push(5));
+console.log(list.length);
+console.log(list.head.val);
+console.log(list.tail.val);
+console.log(list.head.prev);
