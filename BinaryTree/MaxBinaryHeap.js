@@ -46,53 +46,31 @@ class MaxBinaryHeap {
             let leftChildIndex = (2 * currentIndex) + 1;
             let rightChildIndex = (2 * currentIndex) + 2;
 
-            let leftChildValue = this.values[leftChildIndex];
-            let rightChildValue = this.values[rightChildIndex];
+            let leftChildValue, rightChildValue, maxIndex = null;
 
-            if (typeof leftChildValue === undefined && typeof rightChildValue === undefined) {
+            if (leftChildIndex < this.values.length) {
+                leftChildValue = this.values[leftChildIndex];
+                if (leftChildValue > currentValue) {
+                    maxIndex = leftChildIndex
+                }
+            }
+
+            if (rightChildIndex < this.values.length) {
+                rightChildValue = this.values[rightChildIndex];
+
+                if ((rightChildValue > currentValue && rightChildValue > leftChildValue) ||
+                    (rightChildValue > currentValue && maxIndex === null)) {
+                    maxIndex = rightChildIndex;
+                }
+            }
+
+            if (maxIndex === null) {
                 break;
             }
 
-            if (typeof leftChildValue !== undefined && typeof rightChildValue !== undefined) {
-                let maxChildValue = 0;
-                let maxChildIndex = 0;
-                if(leftChildValue > rightChildValue) {
-                    maxChildValue = leftChildValue;
-                    maxChildIndex = leftChildIndex;
-                } else {
-                    maxChildValue = rightChildValue;
-                    maxChildIndex = rightChildIndex;
-                }
-
-                if(currentValue < maxChildValue) {
-                    this.values[currentIndex] = maxChildValue;
-                    this.values[maxChildIndex] = currentValue;
-                    currentIndex = maxChildIndex;
-                    continue;
-                } else {
-                    break;
-                }
-            }
-
-            if (leftChildValue !== null) {
-                if (currentValue < leftChildValue) {
-                    this.values[currentIndex] = leftChildValue;
-                    this.values[leftChildIndex] = currentValue;
-                    currentIndex = leftChildIndex;
-                } else {
-                    break;
-                }
-            }
-
-            if (rightChildValue !== null) {
-                if (currentValue < rightChildValue) {
-                    this.values[currentIndex] = rightChildValue;
-                    this.values[rightChildIndex] = currentValue;
-                    currentIndex = rightChildIndex;
-                } else {
-                    break;
-                }
-            }
+            this.values[currentIndex] = this.values[maxIndex];
+            this.values[maxIndex] = currentValue;
+            currentValue = maxIndex;
         }
 
     }
@@ -108,6 +86,14 @@ heap.insert(27);
 heap.insert(12);
 heap.insert(55);
 
+console.log(heap.values);
+console.log(heap.removeMax());
+console.log(heap.values);
+console.log(heap.removeMax());
+console.log(heap.values);
+console.log(heap.removeMax());
+console.log(heap.values);
+console.log(heap.removeMax());
 console.log(heap.values);
 console.log(heap.removeMax());
 console.log(heap.values);
