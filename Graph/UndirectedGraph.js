@@ -45,17 +45,51 @@ class Graph {
 
         delete this.adjacencyList[vertexToDelete];
     }
+
+    depthFirstRecursive(startVertex) {
+
+        let result = [];
+        let visited = {};
+        let adjacencyList = this.adjacencyList;
+
+        (function dFSHelper(vertex) {
+
+            if (!vertex) {
+                return null;
+            }
+
+            visited[vertex] = true;
+            result.push(vertex);
+
+            for (let neighbour of adjacencyList[vertex]) {
+                if (!visited[neighbour]) {
+                    dFSHelper(neighbour);
+                }
+            }
+        })(startVertex)
+
+        return result;
+    }
 }
 
-let graph = new Graph();
-graph.addVertex("a");
-graph.addVertex("b");
-graph.addVertex("c");
+let g = new Graph();
 
-graph.addEdge("a", "b");
-graph.addEdge("b", "c");
-graph.removeVertex("b");
-graph.removeEdge("a", "b");
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
+g.addVertex("E")
+g.addVertex("F")
 
 
-console.log(graph);
+g.addEdge("A", "B")
+g.addEdge("A", "C")
+g.addEdge("B", "D")
+g.addEdge("C", "E")
+g.addEdge("D", "E")
+g.addEdge("D", "F")
+g.addEdge("E", "F")
+console.log(g.depthFirstRecursive("A"));
+
+
+//console.log(graph);
