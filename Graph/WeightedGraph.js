@@ -1,4 +1,11 @@
-class Graph {
+class Edge {
+    constructor(vertex, weight) {
+        this.vertex = vertex;
+        this.weight = weight;
+    }
+}
+
+class WeightedGraph {
     constructor() {
         this.adjacencyList = {};
     }
@@ -9,158 +16,103 @@ class Graph {
         }
     }
 
-    addEdge(vertex1, vertex2) {
+    addEdge(vertex1, vertex2, weight) {
         if (!this.adjacencyList[vertex1] || !this.adjacencyList[vertex2]) {
-            return;
+            return null;
         }
 
-        this.adjacencyList[vertex1].push(vertex2);
-        this.adjacencyList[vertex2].push(vertex1);
+        this.adjacencyList[vertex1].push(new Edge(vertex2, weight));
+        this.adjacencyList[vertex2].push(new Edge(vertex1, weight));
     }
 
-    removeEdge(vertex1, vertex2) {
+    dijkstra(startVertex, endVertex) {
+        let distances = {};
+        let priorityQueue = new PriorityQueue();
+        let pathObj = {};
 
-        if (!this.adjacencyList[vertex1] || !this.adjacencyList[vertex2]) {
-            return;
-        }
-
-        this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
-            v => v !== vertex2
-        );
-
-        this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
-            v => v !== vertex1
-        );
-    }
-
-    removeVertex(vertexToDelete) {
-
-        if (!this.adjacencyList[vertexToDelete]) {
-            return;
-        }
-
+        //initialization
         for (let vertex in this.adjacencyList) {
-            this.removeEdge(vertexToDelete, vertex)
-        }
-
-        delete this.adjacencyList[vertexToDelete];
-    }
-
-    depthFirstRecursive(startVertex) {
-
-        let result = [];
-        let visited = {};
-        let adjacencyList = this.adjacencyList;
-
-        (function dFSHelper(vertex) {
-
-            if (!vertex) {
-                return null;
-            }
-
-            visited[vertex] = true;
-            result.push(vertex);
-
-            for (let neighbour of adjacencyList[vertex]) {
-                if (!visited[neighbour]) {
-                    dFSHelper(neighbour);
-                }
-            }
-        })(startVertex)
-
-        return result;
-    }
-
-    depthFirstIterative(startVertex) {
-        let result = [];
-        let toBeVisited = {};
-        let stack = [startVertex];
-        toBeVisited[startVertex] = true;
-        let adjacencyList = this.adjacencyList;
-
-
-        while (stack.length) {
-            let visitingVertex = stack.pop();
-            result.push(visitingVertex);
-
-            for (let neighbour of adjacencyList[visitingVertex]) {
-                if (!toBeVisited[neighbour]) {
-                    toBeVisited[neighbour] = true;
-                    stack.push(neighbour);
-                }
+            if (vertex === startVertex) {
+                distances[vertex] = 0;
+                priorityQueue.enqueue(vertex, 0);
+            } else {
+                distances[vertex] = Infinity;
+                priorityQueue.enqueue(vertex, Infinity);
             }
         }
 
-        return result;
-    }
+        let currentVertexObj
+        while (currentVertexObj = priorityQueue.dequeue()) {
 
-    breadthFirstIterative(startVertex) {
-        let result = [];
-        let toBeVisited = {};
-        let stack = [startVertex];
-        toBeVisited[startVertex] = true;
-        let adjacencyList = this.adjacencyList;
+            //Are we at the end?
+            if (currentVertexObj.vertex === endVertex) {
+                let result = [endVertex];
+                let currentVertex = endVertex;
+                while(pathObj[currentVertex]) {
+                    result.unshift(pathObj[currentVertex])
+                    currentVertex = pathObj[currentVertex];
+                }
 
+                return result;
+            }
 
-        while (stack.length) {
-            let visitingVertex = stack.shift();
-            result.push(visitingVertex);
+            if (distances[currentVertexObj.vertex] === Infinity) {
+                continue;
+            }
 
-            for (let neighbour of adjacencyList[visitingVertex]) {
-                if (!toBeVisited[neighbour]) {
-                    toBeVisited[neighbour] = true;
-                    stack.push(neighbour);
+            for (let adjacentVertexIndex in this.adjacencyList[currentVertexObj.vertex]) {
+                let adjacentVertex = this.adjacencyList[currentVertexObj.vertex][adjacentVertexIndex];
+                let candidateDistance = distances[currentVertexObj.vertex] + adjacentVertex.weight;
+
+                if (candidateDistance < distances[adjacentVertex.vertex]) {
+                    distances[adjacentVertex.vertex] = candidateDistance;
+                    pathObj[adjacentVertex.vertex] = currentVertexObj.vertex;
+                    priorityQueue.enqueue(adjacentVertex.vertex, candidateDistance)
                 }
             }
         }
+    }
 
-        return result;
+
+}
+
+class PriorityQueue {
+    constructor() {
+        this.values = [];
+    }
+
+    enqueue(vertex, priority) {
+        this.values.push({vertex, priority})
+        this.sort();
+    }
+
+    dequeue() {
+        return this.values.shift();
+    }
+
+    sort() {
+        this.values.sort((a, b) => a.priority - b.priority);
     }
 }
 
-let g = new Graph();
+let graph = new WeightedGraph()
+graph.addVertex("A");
+graph.addVertex("B");
+graph.addVertex("C");
+graph.addVertex("D");
+graph.addVertex("E");
+graph.addVertex("F");
 
-g.addVertex("A")
-g.addVertex("B")
-g.addVertex("C")
-g.addVertex("D")
-g.addVertex("E")
-g.addVertex("F")
+graph.addEdge("A", "B", 4);
+graph.addEdge("A", "C", 2);
+graph.addEdge("B", "E", 3);
+graph.addEdge("C", "D", 2);
+graph.addEdge("C", "F", 4);
+graph.addEdge("D", "E", 3);
+graph.addEdge("D", "F", 1);
+graph.addEdge("E", "F", 1);
 
-
-g.addEdge("A", "B")
-g.addEdge("A", "C")
-g.addEdge("B", "D")
-g.addEdge("C", "E")
-g.addEdge("D", "E")
-g.addEdge("D", "F")
-g.addEdge("E", "F")
-console.log("DFrec" + g.depthFirstRecursive("A"));
-console.log("DFiter" + g.depthFirstIterative("A"));
-console.log("BFiter" + g.breadthFirstIterative("A"));
-
-console.log("---------------------");
-
-let g2 = new Graph();
-
-g2.addVertex("A")
-g2.addVertex("B")
-g2.addVertex("C")
-g2.addVertex("D")
-g2.addVertex("E")
-g2.addVertex("F")
+console.log(graph.dijkstra("A", "E"));
+//console.log(graph.dijkstra("E", "A"));
 
 
-g2.addEdge("A", "B")
-g2.addEdge("A", "E")
-g2.addEdge("B", "C")
-g2.addEdge("B", "D")
-g2.addEdge("E", "D")
-g2.addEdge("E", "F")
-g2.addEdge("C", "D")
-g2.addEdge("F", "D")
-
-console.log("BFiter" + g2.breadthFirstIterative("A"));
-
-
-//console.log(graph);

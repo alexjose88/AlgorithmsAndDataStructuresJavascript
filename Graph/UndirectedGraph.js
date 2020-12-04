@@ -1,4 +1,4 @@
-class Graph {
+class UndirectedGraph {
     constructor() {
         this.adjacencyList = {};
     }
@@ -70,9 +70,55 @@ class Graph {
 
         return result;
     }
+
+    depthFirstIterative(startVertex) {
+        let result = [];
+        let toBeVisited = {};
+        let stack = [startVertex];
+        toBeVisited[startVertex] = true;
+        let adjacencyList = this.adjacencyList;
+
+
+        while (stack.length) {
+            let visitingVertex = stack.pop();
+            result.push(visitingVertex);
+
+            for (let neighbour of adjacencyList[visitingVertex]) {
+                if (!toBeVisited[neighbour]) {
+                    toBeVisited[neighbour] = true;
+                    stack.push(neighbour);
+                }
+            }
+        }
+
+        return result;
+    }
+
+    breadthFirstIterative(startVertex) {
+        let result = [];
+        let toBeVisited = {};
+        let stack = [startVertex];
+        toBeVisited[startVertex] = true;
+        let adjacencyList = this.adjacencyList;
+
+
+        while (stack.length) {
+            let visitingVertex = stack.shift();
+            result.push(visitingVertex);
+
+            for (let neighbour of adjacencyList[visitingVertex]) {
+                if (!toBeVisited[neighbour]) {
+                    toBeVisited[neighbour] = true;
+                    stack.push(neighbour);
+                }
+            }
+        }
+
+        return result;
+    }
 }
 
-let g = new Graph();
+let g = new UndirectedGraph();
 
 g.addVertex("A")
 g.addVertex("B")
@@ -89,7 +135,32 @@ g.addEdge("C", "E")
 g.addEdge("D", "E")
 g.addEdge("D", "F")
 g.addEdge("E", "F")
-console.log(g.depthFirstRecursive("A"));
+console.log("DFrec" + g.depthFirstRecursive("A"));
+console.log("DFiter" + g.depthFirstIterative("A"));
+console.log("BFiter" + g.breadthFirstIterative("A"));
+
+console.log("---------------------");
+
+let g2 = new UndirectedGraph();
+
+g2.addVertex("A")
+g2.addVertex("B")
+g2.addVertex("C")
+g2.addVertex("D")
+g2.addVertex("E")
+g2.addVertex("F")
+
+
+g2.addEdge("A", "B")
+g2.addEdge("A", "E")
+g2.addEdge("B", "C")
+g2.addEdge("B", "D")
+g2.addEdge("E", "D")
+g2.addEdge("E", "F")
+g2.addEdge("C", "D")
+g2.addEdge("F", "D")
+
+console.log("BFiter" + g2.breadthFirstIterative("A"));
 
 
 //console.log(graph);
