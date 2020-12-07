@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="523bb219-ad06-4c81-9f19-3adbe8839b8f" name="Default Changelist" comment="add hash table">
-      <change afterPath="$PROJECT_DIR$/Exercices/SinglyLinkedList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercices/SinglyLinkedList.js" beforeDir="false" afterPath="$PROJECT_DIR$/Exercices/SinglyLinkedList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +86,7 @@
       <workItem from="1605510239575" duration="11918000" />
       <workItem from="1606075837156" duration="562000" />
       <workItem from="1606122358758" duration="21096000" />
-      <workItem from="1606979361594" duration="7523000" />
+      <workItem from="1606979361594" duration="7846000" />
     </task>
     <servers />
   </component>
@@ -109,39 +108,39 @@
     <state x="659" y="222" key="#xdebugger.evaluate/-1792.23.1792.1097/0.23.1920.977@0.23.1920.977" timestamp="1606896229548" />
     <state x="-1177" y="246" key="#xdebugger.evaluate/0.23.1920.977/-1792.23.1792.1097@-1792.23.1792.1097" timestamp="1606203667749" />
     <state x="659" y="222" key="#xdebugger.evaluate/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1606291871840" />
-    <state x="567" y="96" key="CommitChangelistDialog2" timestamp="1607067824052">
+    <state x="567" y="96" key="CommitChangelistDialog2" timestamp="1607327549296">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="567" y="96" key="CommitChangelistDialog2/-1792.23.1792.1097/0.23.1920.977@0.23.1920.977" timestamp="1607067824052" />
-    <state x="567" y="96" key="CommitChangelistDialog2/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1606291925025" />
-    <state width="1878" height="212" key="GridCell.Tab.0.bottom" timestamp="1607327280031">
+    <state x="567" y="96" key="CommitChangelistDialog2/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1607327549296" />
+    <state width="1878" height="178" key="GridCell.Tab.0.bottom" timestamp="1607327783510">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="143" key="GridCell.Tab.0.bottom/-1792.23.1792.1097/0.23.1920.977@0.23.1920.977" timestamp="1607068972211" />
     <state width="1878" height="264" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1604426921517" />
     <state width="1750" height="312" key="GridCell.Tab.0.bottom/0.23.1920.977/-1792.23.1792.1097@-1792.23.1792.1097" timestamp="1606203865120" />
-    <state width="1878" height="212" key="GridCell.Tab.0.bottom/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1607327280031" />
-    <state width="1878" height="212" key="GridCell.Tab.0.center" timestamp="1607327280030">
+    <state width="1878" height="178" key="GridCell.Tab.0.bottom/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1607327783510" />
+    <state width="1878" height="178" key="GridCell.Tab.0.center" timestamp="1607327783510">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="143" key="GridCell.Tab.0.center/-1792.23.1792.1097/0.23.1920.977@0.23.1920.977" timestamp="1607068972210" />
     <state width="1878" height="264" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1604426921516" />
     <state width="1750" height="312" key="GridCell.Tab.0.center/0.23.1920.977/-1792.23.1792.1097@-1792.23.1792.1097" timestamp="1606203865119" />
-    <state width="1878" height="212" key="GridCell.Tab.0.center/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1607327280030" />
-    <state width="1878" height="212" key="GridCell.Tab.0.left" timestamp="1607327280030">
+    <state width="1878" height="178" key="GridCell.Tab.0.center/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1607327783510" />
+    <state width="1878" height="178" key="GridCell.Tab.0.left" timestamp="1607327783509">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="143" key="GridCell.Tab.0.left/-1792.23.1792.1097/0.23.1920.977@0.23.1920.977" timestamp="1607068972209" />
     <state width="1878" height="264" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1604426921516" />
     <state width="1750" height="312" key="GridCell.Tab.0.left/0.23.1920.977/-1792.23.1792.1097@-1792.23.1792.1097" timestamp="1606203865119" />
-    <state width="1878" height="212" key="GridCell.Tab.0.left/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1607327280030" />
-    <state width="1878" height="212" key="GridCell.Tab.0.right" timestamp="1607327280031">
+    <state width="1878" height="178" key="GridCell.Tab.0.left/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1607327783509" />
+    <state width="1878" height="178" key="GridCell.Tab.0.right" timestamp="1607327783510">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="143" key="GridCell.Tab.0.right/-1792.23.1792.1097/0.23.1920.977@0.23.1920.977" timestamp="1607068972210" />
     <state width="1878" height="264" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1604426921516" />
     <state width="1750" height="312" key="GridCell.Tab.0.right/0.23.1920.977/-1792.23.1792.1097@-1792.23.1792.1097" timestamp="1606203865120" />
-    <state width="1878" height="212" key="GridCell.Tab.0.right/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1607327280031" />
+    <state width="1878" height="178" key="GridCell.Tab.0.right/0.23.1920.977/-1792.23.1792.1097@0.23.1920.977" timestamp="1607327783510" />
     <state width="1878" height="212" key="GridCell.Tab.1.bottom" timestamp="1607327280032">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
@@ -291,7 +290,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Exercices/SinglyLinkedList.js</url>
-          <line>113</line>
+          <line>133</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="69" />
         </line-breakpoint>
