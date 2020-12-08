@@ -67,7 +67,7 @@ class SinglyLinkedList {
 
         let newNode = new Node(value);
 
-        if (this.length === 0 ) {
+        if (this.length === 0) {
             this.head = newNode;
             this.tail = newNode;
             return true;
@@ -85,6 +85,31 @@ class SinglyLinkedList {
         this.length++;
 
         return true;
+    }
+
+    rotate(index) {
+
+        if (index > this.length) return this;
+        if (this.length === 1) return this;
+
+        if (index > 0) {
+            if(index === 0) return this;
+            let newTail = this.get(index - 1)
+
+            this.tail.next = this.head;
+            this.head = newTail.next;
+            this.tail = newTail
+            this.tail.next = null;
+        } else {
+            let currentTail = this.tail;
+            currentTail.next = this.head;
+
+            this.tail = this.get(this.length + index - 1);
+            this.head = this.tail.next;
+            this.tail.next = null;
+        }
+
+        return this;
     }
 }
 
@@ -132,8 +157,8 @@ console.log("----------");
 
 let list3 = new SinglyLinkedList();
 list3.push(5).push(10).push(15).push(20);
-console.log(list3.insert(2,12));
-console.log(list3.insert(100,12));
+console.log(list3.insert(2, 12));
+console.log(list3.insert(100, 12));
 console.log(list3.length);
 console.log(list3.head.val);
 console.log(list3.head.next.val);
@@ -141,5 +166,11 @@ console.log(list3.head.next.next.val);
 console.log(list3.head.next.next.next.val);
 console.log(list3.head.next.next.next.next.val);
 
-console.log(list3.insert(5,25));
+console.log(list3.insert(5, 25));
 console.log(list3.head.next.next.next.next.next.val);
+
+console.log("----------------")
+let list4 = new SinglyLinkedList();
+list4.push(5).push(10).push(15).push(20).push(25);
+console.log(list4.rotate(-2));
+
