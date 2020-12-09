@@ -93,7 +93,7 @@ class SinglyLinkedList {
         if (this.length === 1) return this;
 
         if (index > 0) {
-            if(index === 0) return this;
+            if (index === 0) return this;
             let newTail = this.get(index - 1)
 
             this.tail.next = this.head;
@@ -110,6 +110,41 @@ class SinglyLinkedList {
         }
 
         return this;
+    }
+
+    set(index, value) {
+
+        if (index > this.length || index < 0) {
+            return false;
+        }
+
+
+        if (this.length === 0) {
+            let newNode = new Node(value);
+            this.head = newNode;
+            this.tail = newNode;
+            this.length++;
+
+            return true;
+        }
+
+
+        if (index === this.length) {
+            let newNode = new Node(value);
+            this.tail.next = newNode;
+            this.tail = newNode;
+            this.length++;
+
+            return true;
+        }
+
+        let node = this.get(index);
+        if (node != null) {
+            node.val = value;
+            return false;
+        }
+
+        return false;
     }
 }
 
@@ -173,4 +208,17 @@ console.log("----------------")
 let list4 = new SinglyLinkedList();
 list4.push(5).push(10).push(15).push(20).push(25);
 console.log(list4.rotate(-2));
+
+console.log("----------");
+
+let list5 = new SinglyLinkedList();
+console.log(list5.set(0, 10));
+console.log(list5.set(1, 2));
+console.log(list5.length);
+console.log(list5.head.val);
+
+console.log(list5.set(10, 10));
+
+console.log(list5.set(2, 100));
+console.log(list5.head.next.next.val);
 
