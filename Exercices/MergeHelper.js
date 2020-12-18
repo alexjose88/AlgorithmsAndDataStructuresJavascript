@@ -11,8 +11,8 @@ function merge(array1, array2, comparator) {
     let j = 0;
 
     let resultArray = [];
-    while(i < array1.length && j < array2.length) {
-        if(comparator(array1[i], array2[j]) <= 0 ) {
+    while (i < array1.length && j < array2.length) {
+        if (comparator(array1[i], array2[j]) <= 0) {
             resultArray.push(array1[i]);
             i++;
         } else {
@@ -21,12 +21,12 @@ function merge(array1, array2, comparator) {
         }
     }
 
-    while(i < array1.length) {
+    while (i < array1.length) {
         resultArray.push(array1[i]);
         i++;
     }
 
-    while(j < array2.length) {
+    while (j < array2.length) {
         resultArray.push(array2[j]);
         j++;
     }
